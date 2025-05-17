@@ -4,6 +4,10 @@ import { defineConfig } from '@playwright/test';
 export default defineConfig({
   testDir: './tests',
   timeout: 30000,
+  reporter: [
+    ['list'],  // salida en consola
+    ['html', { outputFolder: 'playwright-report', open: 'never' }]  // reporte HTML
+  ],
   use: {
     headless: true,
     viewport: { width: 1280, height: 720 },
