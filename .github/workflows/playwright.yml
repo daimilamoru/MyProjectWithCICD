@@ -28,6 +28,9 @@ jobs:
       - name: Run Playwright tests
         run: npx playwright test
 
+      - name: List report folder
+        run: ls -la playwright-report || echo "No report folder found"        
+
       - name: Upload Playwright report
         uses: actions/upload-artifact@v3
         with:
