@@ -25,15 +25,14 @@ jobs:
       - name: Install Playwright Browsers
         run: npx playwright install --with-deps
 
-      - name: Run Playwright tests
+      - name: Run Playwright tests with HTML Report
         run: npx playwright test
 
-      - name: List report folder
-        run: ls -la playwright-report || echo "No report folder found"        
+      - name: List playwright-report contents
+        run: ls -l playwright-report || echo "No existe la carpeta playwright-report"
 
-      - name: Upload Playwright report
-        uses: actions/upload-artifact@v3
+      - name: Upload Playwright Report
+        uses: actions/upload-artifact@v2
         with:
           name: playwright-report
-          path: playwright-report
-  
+          path: playwright-report/
