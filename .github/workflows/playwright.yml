@@ -33,8 +33,8 @@ jobs:
       - name: Print environment variables
         run: echo "USER=$USER && PASS=$PASS"
         env:
-                USER: ${{ secrets.USER }}
-                PASS: ${{ secrets.PASS }}
+              USER: ${{ secrets.USER }}
+              PASS: ${{ secrets.PASS }}
 
 
       - name: Run only smoke tests
