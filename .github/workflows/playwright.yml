@@ -36,7 +36,9 @@ jobs:
               USER: ${{ secrets.USER }}
               PASS: ${{ secrets.PASS }}
 
-
+      - name: Check current env
+        run: printenv | grep -i 'user\|pass'
+            
       - name: Run only smoke tests
         run: npx playwright test tests/smoke
         env:
