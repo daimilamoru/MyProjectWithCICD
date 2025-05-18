@@ -34,6 +34,5 @@ jobs:
       - name: Debug repo files
         run: ls -R
 
-
       - name: Run Playwright tests
         run: npx playwright test
