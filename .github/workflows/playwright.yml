@@ -31,7 +31,8 @@ jobs:
       #   run: npx playwright test
 
       - name: Print environment variables
-        run: echo "USER=$USER && PASS=$PASS"
+        run:  printenv | grep -i 'user\|pass'
+          # echo "USER=$USER && PASS=$PASS"
         env:
               USER: ${{ secrets.USER }}
               PASS: ${{ secrets.PASS }}
