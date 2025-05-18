@@ -44,7 +44,8 @@ jobs:
         run: ls -la
             
       - name: Run only smoke tests
-        run: npx playwright test tests/smoke
+        run:  USER=${{ secrets.USER }} PASS=${{ secrets.PASS }} npm test
+        # npx playwright test tests/smoke
         env:
             USER: ${{ secrets.USER }}
             PASS: ${{ secrets.PASS }}
