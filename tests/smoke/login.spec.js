@@ -8,8 +8,8 @@ dotenv.config();
 
 test('Login con POM y variables de entorno', async ({ page }) => {
   const loginPage = new LoginPage(page);
-  const user = process.env.user;
-  const pass = process.env.pass;
+  const user = process.env.USER;
+  const pass = process.env.PASS;
 
   console.log('USER:', user);
   console.log('PASS:', pass);
