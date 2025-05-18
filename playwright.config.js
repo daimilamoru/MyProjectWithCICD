@@ -12,7 +12,7 @@ export default defineConfig({
     headless: true,
     viewport: { width: 1280, height: 720 },
     actionTimeout: 5000,
-    baseURL: 'https://playwright.dev/', // Cámbialo si usás otra URL base
+    baseURL: 'https://stage.firstdue.com/', // Cámbialo si usás otra URL base    
   },
 });
 
