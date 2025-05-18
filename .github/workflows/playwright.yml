@@ -30,8 +30,15 @@ jobs:
       # - name: Run Playwright tests
       #   run: npx playwright test
 
+      - name: Print environment variables
+        run: echo "USER=$USER && PASS=$PASS"
+        env:
+                USER: ${{ secrets.USER }}
+                PASS: ${{ secrets.PASS }}
+
+
       - name: Run only smoke tests
         run: npx playwright test tests/smoke
         env:
-            user: ${{ secrets.USER }}
-            pass: ${{ secrets.PASS }}
+            USER: ${{ secrets.USER }}
+            PASS: ${{ secrets.PASS }}
