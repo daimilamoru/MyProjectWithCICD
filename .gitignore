@@ -1,0 +1,8 @@
+# Ignorar node_modules
+node_modules/
+
+# Ignorar archivo de configuración sensible
+.env
+
+# Ignorar reportes de pruebas
+playwright-report/
