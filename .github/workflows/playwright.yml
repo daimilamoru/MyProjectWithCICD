@@ -35,10 +35,13 @@ jobs:
           # echo "USER=$USER && PASS=$PASS"
         env:
               USER: ${{ secrets.USER }}
-              PASS: ${{ secrets.PASS }}
+              PASS: ${{ secrets.PASS }}              
 
       - name: Check current env
         run: printenv | grep -i 'user\|pass'
+
+      - name: listar acrchivos en el directorio
+        run: ls -la
             
       - name: Run only smoke tests
         run: npx playwright test tests/smoke
