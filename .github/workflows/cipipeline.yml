@@ -1,0 +1,32 @@
+name: CI Pipeline
+
+on:
+  workflow_dispatch
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Clonar repo de pruebas
+        uses: actions/checkout@v3
+        with:
+          repository: daimilamoru/QA-Automation-Demo
+      
+      - name: Configurar Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: '18'
+
+      - name: Instalar dependencias
+        run: npm install
+
+      - name: Install Playwright Browsers
+        run: npx playwright install --with-deps
+
+      - name: Ejecutar solo pruebas Smoke
+        run: npm test -- tests/smoke
+  
+      
+      
+      
+      
