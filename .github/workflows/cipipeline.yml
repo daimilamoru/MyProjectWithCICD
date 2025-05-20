@@ -32,7 +32,7 @@ jobs:
 
       # 🔹 Paso 5: Instalar navegadores de Playwright
       - name: Instalar Playwright Browsers
-        run: npx playwright install --with-deps
+        run: npx --yes playwright install --with-deps
 
       # 🔹 Paso 6: Ejecutar pruebas Smoke
       - name: Ejecutar solo pruebas Smoke
