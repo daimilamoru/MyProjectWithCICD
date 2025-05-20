@@ -30,6 +30,10 @@ jobs:
       - name: Instalar dependencias
         run: npm install
 
+      - name: Otorgar permisos a node_modules/.bin
+        run: chmod +x node_modules/.bin/playwright
+
+
       # 🔹 Paso 5: Instalar navegadores de Playwright
       - name: Instalar Playwright Browsers
         run: npx --yes playwright install --with-deps
