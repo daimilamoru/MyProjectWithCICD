@@ -6,27 +6,34 @@ on:
 jobs:
   test:
     runs-on: ubuntu-latest
+
     steps:
-      - name: Clonar repo de pruebas
+      # 🔹 Paso 1: Checkout del repo actual (MyProjectWithCICD, con las pruebas)
+      - name: Checkout del repo de pruebas (MyProjectWithCICD)
+        uses: actions/checkout@v3
+
+      # 🔹 Paso 2: Clonar el código fuente del otro repo en una subcarpeta
+      - name: Clonar código fuente (QA-Automation-Demo)
         uses: actions/checkout@v3
         with:
           repository: daimilamoru/QA-Automation-Demo
-          token: ${{ secrets.GITHUB_TOKEN }}
-          path: QA-Automation-Demo
-      
+          token: ${{ secrets.PERSONAL_TOKEN }}  # Usa un token personal con permisos de lectura
+          path: app-code                         # Se guarda en subcarpeta ./app-code
+
+      # 🔹 Paso 3: Configurar Node.js
       - name: Configurar Node.js
         uses: actions/setup-node@v3
         with:
           node-version: '18'
 
+      # 🔹 Paso 4: Instalar dependencias del proyecto de pruebas
       - name: Instalar dependencias
-        working-directory: QA-Automation-Demo
         run: npm install
 
-      - name: Instalar navegadores Playwright
-        working-directory: QA-Automation-Demo
+      # 🔹 Paso 5: Instalar navegadores de Playwright
+      - name: Instalar Playwright Browsers
         run: npx playwright install --with-deps
 
-      - name: Ejecutar pruebas smoke
-        working-directory: QA-Automation-Demo
+      # 🔹 Paso 6: Ejecutar pruebas Smoke
+      - name: Ejecutar solo pruebas Smoke
         run: npm test -- tests/smoke
