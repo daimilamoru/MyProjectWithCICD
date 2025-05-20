@@ -2,7 +2,7 @@
 node_modules/
 
 # Ignorar archivo de configuración sensible
-.env
+# .env
 
 # Ignorar reportes de pruebas
 playwright-report/

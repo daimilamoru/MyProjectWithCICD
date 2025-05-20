@@ -2,19 +2,17 @@
 export class LoginPage {
     constructor(page) {
       this.page = page;
-      this.emailInput = page.getByRole('textbox', { name: 'Email' });
-      this.continueButton = page.getByRole('button', { name: 'Continue' });
-      this.passwordInput = page.getByRole('textbox', { name: 'Password New Password Confirm' });
-      this.signInButton = page.getByRole('button', { name: 'Sign in' });
-    }
+      this.usernameInput = page.locator('[data-test="username"]');     
+      this.passwordInput = page.locator('[data-test="password"]')
+      this.signInButton =  page.locator('[data-test="login-button"]');
+    }   
   
     async goto() {
       await this.page.goto('/');
     }
   
-    async login(email, password) {
-      await this.emailInput.fill(email);
-      await this.continueButton.click();
+    async login(username, password) {
+      await this.usernameInput.fill(username);      
       await this.passwordInput.fill(password);
       await this.signInButton.click();
     }

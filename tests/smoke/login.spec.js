@@ -6,16 +6,16 @@ import dotenv from 'dotenv';
 
 dotenv.config();
 
-test('Login con POM y variables de entorno', async ({ page }) => {
+test('Login con POM ', async ({ page }, testInfo) => {
   const loginPage = new LoginPage(page);
-  const user = process.env.USER;
-  const pass = process.env.PASS;
+  const username = process.env.username;
+  const password = process.env.password;
 
-  console.log('USER:', user);
-  console.log('PASS:', pass);
+  //console.log('USER:', user);
+  //console.log('PASS:', pass);
 
   await loginPage.goto();
-  await loginPage.login(user, pass);
+  await loginPage.login(username, password);
 
  
 });

@@ -9,10 +9,11 @@ export default defineConfig({
     ['html', { outputFolder: 'playwright-report', open: 'never' }]  // reporte HTML
   ],
   use: {
-    headless: true,
+    headless: false,
     viewport: { width: 1280, height: 720 },
     actionTimeout: 5000,
-    baseURL: 'https://stage.firstdue.com/', // Cámbialo si usás otra URL base    
+    baseURL: 'https://www.saucedemo.com/', // Cámbialo si usás otra URL base   
+  
   },
 });
 
