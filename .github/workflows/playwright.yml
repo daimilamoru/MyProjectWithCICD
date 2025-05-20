@@ -34,7 +34,7 @@ jobs:
         run:  printenv | grep -i 'user\|pass'
           # echo "USER=$USER && PASS=$PASS"
         env:
-              USER: ${{ secrets.USER }}
+              user: ${{ secrets.USER }}
               PASS: ${{ secrets.PASS }}              
 
       - name: Check current env

@@ -1,7 +1,11 @@
 name: CI Pipeline
 
+# on:
+#   workflow_dispatch
 on:
-  workflow_dispatch
+    push:
+      branches:
+        - main # Cambia 'main' por tu rama principal si es diferente (ej. 'master')
 
 jobs:
   test:
@@ -30,14 +34,16 @@ jobs:
       - name: Instalar dependencias
         run: npm install
 
+    # 🔹 Paso 5: Instalar dependencias del proyecto de pruebas
+
       - name: Otorgar permisos a node_modules/.bin
         run: chmod +x node_modules/.bin/playwright
 
 
-      # 🔹 Paso 5: Instalar navegadores de Playwright
+      # 🔹 Paso 6: Instalar navegadores de Playwright
       - name: Instalar Playwright Browsers
         run: npx --yes playwright install --with-deps
 
-      # 🔹 Paso 6: Ejecutar pruebas Smoke
+      # 🔹 Paso 7: Ejecutar pruebas Smoke
       - name: Ejecutar solo pruebas Smoke
         run: npx playwright test tests/smoke
