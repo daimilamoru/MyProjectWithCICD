@@ -9,7 +9,7 @@ export default defineConfig({
     ['html', { outputFolder: 'playwright-report', open: 'never' }]  // reporte HTML
   ],
   use: {
-    headless: false,
+    headless: true,
     viewport: { width: 1280, height: 720 },
     actionTimeout: 5000,
     baseURL: 'https://www.saucedemo.com/', // Cámbialo si usás otra URL base   
