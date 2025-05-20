@@ -17,7 +17,7 @@ jobs:
         uses: actions/checkout@v3
         with:
           repository: daimilamoru/QA-Automation-Demo
-          token: ${{ secrets.PERSONAL_TOKEN }}  # Usa un token personal con permisos de lectura
+          token: ${{ secrets.tokentest }}  # Usa un token personal con permisos de lectura
           path: app-code                         # Se guarda en subcarpeta ./app-code
 
       # 🔹 Paso 3: Configurar Node.js
