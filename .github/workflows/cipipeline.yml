@@ -40,4 +40,4 @@ jobs:
 
       # 🔹 Paso 6: Ejecutar pruebas Smoke
       - name: Ejecutar solo pruebas Smoke
-        run: npm test -- tests/smoke
+        run: npx playwright test tests/smoke
