@@ -1,7 +1,7 @@
 name: CI Pipeline
 
 # on:
-#   workflow_dispatch # con esta opcion hay que ejecutarlo manualmente
+# workflow_dispatch # con esta opcion hay que ejecutarlo manualmente
 on:
     push:
       branches:
