@@ -11,10 +11,8 @@ test('Login con POM ', async ({ page }, testInfo) => {
   const username = process.env.username;
   const password = process.env.password;
 
-
   await loginPage.goto();
   await loginPage.login(username, password);
-
  
 });
 
